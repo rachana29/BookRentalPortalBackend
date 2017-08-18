@@ -5,10 +5,10 @@ import java.util.List;
 import javax.ws.rs.core.Response;
 
 import com.alacriti.bookRental.dao.impl.DAOException;
-import com.alacriti.bookRental.model.vo.Login;
+import com.alacriti.bookRental.model.vo.User;
 
 public interface IUserDAO {
 
- public List<Login> selectMessage()throws DAOException;
+ public List<User> selectMessage()throws DAOException;
 
 }

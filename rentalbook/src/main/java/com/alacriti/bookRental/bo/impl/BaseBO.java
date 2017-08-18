@@ -6,7 +6,7 @@ import com.alacriti.bookRental.util.LogUtil;
 
 
 public class BaseBO {
-	private Connection connection = null;
+	private static Connection connection = null;
 
 	public BaseBO() {
 	}
@@ -15,7 +15,7 @@ public class BaseBO {
 		this.connection = connection;
 	}
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		return connection;
 	}
 

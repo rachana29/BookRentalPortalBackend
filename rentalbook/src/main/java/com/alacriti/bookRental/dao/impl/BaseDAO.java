@@ -21,10 +21,10 @@ public class BaseDAO {
 
 	}
 
+
 	public Connection getConnection() {
 		return connection;
 	}
-
 	public void setConnection(Connection connection) {
 		this.connection = connection;
 	}
@@ -52,23 +52,27 @@ public class BaseDAO {
 
 	}
 
-	protected PreparedStatement getPreparedStatement(Connection connection, String sqlCmd) throws SQLException {
-
-
+	protected PreparedStatement getPreparedStatement(Connection connection, String sqlCmd) throws Exception {
+		System.out.println("getPreparedStatement");
 		try {
 
 			return connection.prepareStatement(sqlCmd);
 		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		} catch(Exception e){
+			e.printStackTrace();
 			throw e;
 		}
 	}
 
 	protected PreparedStatement getPreparedStatementReturnPK(Connection connection, String sqlCmd) throws SQLException {
-
+		System.out.println("getPreparedStatementReturnPK");
 		try {
 
 			return connection.prepareStatement(sqlCmd, Statement.RETURN_GENERATED_KEYS);
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw e;
 		}
 	}
